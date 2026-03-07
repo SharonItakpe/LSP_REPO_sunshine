@@ -1,0 +1,45 @@
+Class: FlightRecord
+Responsibilities:
+
+- Store the current state of a single tracked aircraft (callsign, type, position, altitude, speed, heading, and last-seen time)
+- Update individual fields when a newer decoded packet arrives
+- Provide a snapshot of all current flight data on request
+- Track the history of recent positions for trend analysis
+
+Collaborators (if any):
+- AircraftDatabase
+- SafetyAnalyzer
+
+Assumptions (if any):
+- One FlightRecord exists per active aircraft in the system
+- Record is removed or archived if no update is received within a configurable timeout
+
+Class: AircraftDatabase
+- Store and index all active FlightRecords, keyed by aircraft identifier
+- Insert a new FlightRecord when an unknown aircraft is first detected
+- Update an existing FlightRecord with the latest decoded data
+- Retrieve a FlightRecord by identifier in response to a controller query
+- Remove stale FlightRecords that have timed out
+
+Collaborators (if any):
+- FlightRecord
+- SafetyAnalyzer
+
+Assumptions (if any):
+- Acts as the single authoritative in-memory store; no persistent database is required for this version
+- Thread-safe access is assumed when multiple subsystems read/write concurrently
+
+Class: SafteyAnalyzer
+- Periodically examine all FlightRecords to detect dangerous situations
+- Detect collision risk when two aircraft are within a critical proximity threshold
+- Detect altitude violations when an aircraft is outside its assigned flight level
+- Detect sudden unexplained changes in speed or heading
+- Generate a DangerAlert and notify RadarDisplay and ControllerQueryHandler when a hazard is found
+
+Collaborators (if any):
+- FlightRecord
+- AircraftDatabse
+
+Assumptions (if any):
+- - Proximity threshold (horizontal and vertical separation minima) is configurable
+- Runs on a separate analysis thread to avoid blocking the display refresh cycle
