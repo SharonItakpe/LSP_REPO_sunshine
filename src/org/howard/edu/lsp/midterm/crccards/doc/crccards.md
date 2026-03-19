@@ -1,0 +1,3 @@
+# CRC Cards Explanation
+
+TaskManager collaborates with Task because its responsibilities are to store tasks, add new tasks, find a task by ID, and return tasks by status, and to perform those responsibilities, it must work directly with Task objects. On the other hand, Task does not collaborate with TaskManager because its responsibilities are limited to storing task information, updating task status, and providing task details, so it is only managing it's own data.
