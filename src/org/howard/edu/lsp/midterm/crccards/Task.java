@@ -1,9 +1,9 @@
+/**
+ * Name: Sharon Itakpe
+ */
+
 package org.howard.edu.lsp.midterm.crccards;
 
-/**
- * Represents a task in the task management system.
- * Author: Sharon
- */
 public class Task {
     private String taskId;
     private String description;

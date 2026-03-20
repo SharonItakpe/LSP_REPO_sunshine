@@ -1,3 +1,7 @@
+/**
+ * Name: Sharon Itakpe
+ */
+
 package org.howard.edu.lsp.midterm.crccards;
 
 import java.util.ArrayList;
@@ -8,7 +12,6 @@ import java.util.Map;
 /**
  * Manages a collection of Task objects.
  * Supports adding tasks, finding tasks by ID, and retrieving tasks by status.
- * Author: Sharon
  */
 public class TaskManager {
     private Map<String, Task> tasks;
