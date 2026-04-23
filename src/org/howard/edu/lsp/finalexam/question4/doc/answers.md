@@ -1,0 +1,5 @@
+# Question 4
+
+At the beginning of the semester, my perspective on using AI in programming was just for getting answers quickly or to be used when I do not feel like doing the work but over time and by virtue of taking this class, this perspective changed because I was encouraged to use AI to learn rather as utilizing it as an escape . For example, when working on assignments, I realized that AI can help with breaking down complex topics into very simplified steps, it created fun analogies for me to understand concepts, and even helped with creating an overall study guide for the AWS exam.
+
+Moving forward, I plan to use AI as a tool to understand difficult concepts anf to gain access to complex knowledge in a simplified way. I will use it to help me break down examples, while still making sure I understand the concepts myself. As a biology major planning to going to dental school, I will utilize this approach to understand different complex body systems and to study for exams. This approach will allow me to benefit from AI without becoming dependent on it.
